@@ -13,5 +13,18 @@ class MainActivity : AppCompatActivity() {
         val inputtext1: EditText = findViewById<EditText>(R.id.editTextText)
         val inputtext2: EditText = findViewById<EditText>(R.id.editTextText2)
         val inputtext3: EditText = findViewById<EditText>(R.id.editTextText3)
+        button.setOnClickListener {
+            val string: String
+            val char: String
+            string = inputtext1.text.toString()
+            char = inputtext2.text.toString()
+            var result = 0
+            for (i in string.indices){
+                if (string[i] == char.toCharArray()[0]){
+                    result = i + 1;
+                }
+            }
+            inputtext3.setText(result.toString())
+        }
     }
 }
